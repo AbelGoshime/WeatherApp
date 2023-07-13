@@ -1,0 +1,104 @@
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+//<a href="https://iconscout.com/3ds/rainy-night" target="_blank">Free Rainy Night 3D Icon</a> by <a href="https://iconscout.com/contributors/yacons-design">Yacons Design</a> on <a href="https://iconscout.com">IconScout</a>
+//<a href="https://iconscout.com/3ds/rainy-night" target="_blank">Free Rainy Night 3D Icon</a> by <a href="https://iconscout.com/contributors/yacons-design">Yacons Design</a> on <a href="https://iconscout.com">IconScout</a>
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100vh;
+  width: 100%;
+  color: #333;
+  background-color: rgb(81, 160, 225);
+
+}
+
+.outline{
+    outline: 5px solid red;
+    border: 3px solid blue;
+}
+
+.weather-container{
+    height:100%;
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "header header"
+    "weather weather";
+    .weather-icon{
+            img{
+                height: 5rem;
+                width: 5rem;
+            }
+        }
+
+    header{
+        grid-area:header;
+        text-align: center;
+    }
+}
+
+.main-container{
+    grid-area:weather;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "search search"
+    "weather weather";
+    height: 100%;
+    width: 100%;
+
+    
+    .search-container{
+        grid-area: search;
+        height: 100%;
+        width: 100%;
+        color:rgb(51, 51, 51);
+        .search-bar{
+            background: rgba(207, 205, 205, 0.5);
+            width: 25rem;
+            height: 3rem;
+            border: 3px solid #333;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            &:focus{
+                outline: none;
+                box-shadow: 1px 1px 1px #333;
+            }
+        }
+        .search-btn{
+            
+            background: rgba(207, 205, 205, 0.5);
+            height: 2rem;
+            width: 5rem;
+            border: 3px solid #333;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform  200ms ease-in-out;
+            &:focus{
+                outline: none;
+                box-shadow: 1px 1px 1px #333;
+            }
+            &:hover{
+                background-color: rgba(51, 51, 51,.8);
+                color: #fff;
+                transform: translateY(-1px);
+            }
+        }
+        }
+
+    
+}
