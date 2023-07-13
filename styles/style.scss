@@ -1,104 +1,162 @@
-*,*::before,*::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 //<a href="https://iconscout.com/3ds/rainy-night" target="_blank">Free Rainy Night 3D Icon</a> by <a href="https://iconscout.com/contributors/yacons-design">Yacons Design</a> on <a href="https://iconscout.com">IconScout</a>
 //<a href="https://iconscout.com/3ds/rainy-night" target="_blank">Free Rainy Night 3D Icon</a> by <a href="https://iconscout.com/contributors/yacons-design">Yacons Design</a> on <a href="https://iconscout.com">IconScout</a>
 
-
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   height: 100vh;
   width: 100%;
   color: #333;
   background-color: rgb(81, 160, 225);
-
+  background-image: url("/background-img/peaceful-meadow-with-trees-distance.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  backdrop-filter: blur(.5rem);
 }
 
-.outline{
-    outline: 5px solid red;
-    border: 3px solid blue;
+.outline {
+  outline: 5px solid red;
+  border: 3px solid blue;
 }
 
-.weather-container{
-    height:100%;
-    width:100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
+.weather-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas:
     "header header"
-    "weather weather";
-    .weather-icon{
-            img{
-                height: 5rem;
-                width: 5rem;
-            }
-        }
-
-    header{
-        grid-area:header;
-        text-align: center;
+    "main main";
+  .weather-icon {
+    img {
+      height: 5rem;
+      width: 5rem;
     }
+  }
+
+  header {
+    grid-area: header;
+    text-align: center;
+  }
 }
 
-.main-container{
-    grid-area:weather;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
+.main-container {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
     "search search"
     "weather weather";
+  height: 100%;
+  width: 100%;
+
+  .weather {
+    grid-area: weather;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .weatherCard {
+      background: rgba(207, 205, 205, 0.5);
+      height: 20rem;
+      width: 20rem;
+      border: 3px solid #333;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "info icon"
+        "info icon";
+      box-shadow: 1px 1px 1px #333;
+      transition: transform 200ms ease-in-out;
+      .weather-icon {
+        grid-area: icon;
+      }
+    }
+
+    .weather-icon {
+      img {
+        height: 5rem;
+        width: 5rem;
+      }
+    }
+    .weather-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .weather-temp {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+      .weather-desc {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    }
+  }
+  .search-container {
+    grid-area: search;
     height: 100%;
     width: 100%;
+    color: rgb(51, 51, 51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    
-    .search-container{
-        grid-area: search;
-        height: 100%;
-        width: 100%;
-        color:rgb(51, 51, 51);
-        .search-bar{
-            background: rgba(207, 205, 205, 0.5);
-            width: 25rem;
-            height: 3rem;
-            border: 3px solid #333;
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 1.5rem;
-            font-weight: 600;
-            &:focus{
-                outline: none;
-                box-shadow: 1px 1px 1px #333;
-            }
-        }
-        .search-btn{
-            
-            background: rgba(207, 205, 205, 0.5);
-            height: 2rem;
-            width: 5rem;
-            border: 3px solid #333;
-            border-radius: 5px;
-            margin-left: 10px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform  200ms ease-in-out;
-            &:focus{
-                outline: none;
-                box-shadow: 1px 1px 1px #333;
-            }
-            &:hover{
-                background-color: rgba(51, 51, 51,.8);
-                color: #fff;
-                transform: translateY(-1px);
-            }
-        }
-        }
-
-    
+    .search-bar {
+      background: rgba(207, 205, 205, 0.5);
+      width: 25rem;
+      height: 3rem;
+      border: 3px solid #333;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      &:focus {
+        outline: none;
+        box-shadow: 1px 1px 1px #333;
+      }
+    }
+    .search-btn {
+      background: rgba(207, 205, 205, 0.5);
+      height: 2rem;
+      width: 5rem;
+      border: 3px solid #333;
+      border-radius: 5px;
+      margin-left: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 200ms ease-in-out;
+      box-shadow: 1px 1px 1px #333;
+      &:active {
+        transform: scale(0.9);
+      }
+      &:focus {
+        outline: none;
+      }
+      &:hover,
+      &:focus {
+        background-color: rgba(51, 51, 51, 0.8);
+        color: #fff;
+      }
+    }
+  }
 }
