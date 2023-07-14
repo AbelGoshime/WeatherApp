@@ -22,6 +22,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   backdrop-filter: blur(.5rem);
+  overflow-x: hidden;
 }
 
 .outline {
@@ -158,5 +159,19 @@ body {
         color: #fff;
       }
     }
+  }
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  font-size: 1.5rem;
+  img{
+    margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
+    height: 3rem;
+    width: 3rem;
   }
 }
